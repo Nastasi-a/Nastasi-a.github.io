@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meubles d'occasion à Grenoble</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* FENETRE CONTACT */
+
+      .contact-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+      }
+
+      .contact-modal.open {
+        display: flex;
+      }
+
+      .contact-modal-content {
+        position: relative;
+        background: #fff9ef;
+        color: #4a463d;
+        width: 100%;
+        max-width: 480px;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 30px 20px;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .contact-close {
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        border: none;
+        background: none;
+        font-size: 32px;
+        cursor: pointer;
+        color: #4a463d;
+      }
+
+      .contact-modal-content h2 {
+        margin-bottom: 15px;
+      }
+
+      .contact-modal-content > p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .contact-person {
+        background: #f3e9d7;
+        padding: 18px;
+        border-radius: 10px;
+        margin-top: 15px;
+      }
+
+      .contact-person h3 {
+        margin-bottom: 10px;
+      }
+
+      .contact-person p {
+        margin-bottom: 15px;
+      }
+
+      .contact-person a {
+        display: block;
+        text-decoration: none;
+        padding: 11px;
+        margin: 9px auto;
+        max-width: 230px;
+        border-radius: 7px;
+      }
+
+      body.modal-open {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="vendeurs.html">Vendeurs</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="#" id="openContact">Contact</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+      <div class="header-content">
+        <h1>Meubles d’occasion à Grenoble</h1>
+        <p>Découvrez nos canapés</p>
+      </div>
+    </header>
+
+    <!-- RECHERCHE -->
+    <section class="search">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Rechercher un meuble..."
+      />
+    </section>
+
+    <!-- CATALOGUE -->
+    <main id="catalog">
+      <!-- PRODUIT 1 -->
+      <div class="card">
+        <div class="gallery">
+          <img src="canape/rouge1.jpeg" alt="Canapé rouge - photo 1" />
+          <img src="canape/rouge2.jpeg" alt="Canapé rouge - photo 2" />
+
+          <!-- Pour ajouter des photos :
+                <img src="canape/rouge2.jpeg" alt="Canapé rouge - photo 2">
+                <img src="canape/rouge3.jpeg" alt="Canapé rouge - photo 3">
+                -->
+        </div>
+
+        <h2>Canapé convertible rouge</h2>
+        <p>Prix : 280€</p>
+        <p>Dimensions :</p>
+        <p class="vendor-info">Vendeur : <strong>Serge</strong></p>
+
+        <p class="contact-note">
+          💬 Message uniquement (WhatsApp / SMS) s'il vous plaît.
+        </p>
+
+        <div class="contact-buttons">
+          <a
+            href="https://wa.me/33689306437?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            target="_blank"
+            rel="noopener"
+            class="btn-wa"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="sms:+33689306437?body=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            class="btn-sms"
+          >
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUIT 2 -->
+      <div class="card">
+        <div class="gallery">
+          <img src="canape/noir1.jpeg" alt="Canapé d'angle - photo 1" />
+          <img src="canape/noir2.jpeg" alt="Canapé d'angle - photo 2" />
+        </div>
+
+        <h2>Canapé convertible noir</h2>
+        <p>Prix : 280€</p>
+        <p>Dimensions :</p>
+        <p class="vendor-info">Vendeur : <strong>Maksym</strong></p>
+
+        <p class="contact-note">
+          💬 Message uniquement (WhatsApp / SMS) s'il vous plaît.
+        </p>
+
+        <div class="contact-buttons">
+          <a
+            href="https://wa.me/33782655498?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            target="_blank"
+            rel="noopener"
+            class="btn-wa"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="sms:+33782655498?body=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            class="btn-sms"
+          >
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUIT 3 -->
+      <div class="card">
+        <div class="gallery">
+          <img src="canape/bleu1.jpeg" alt="Canapé 2 places - photo 1" />
+          <img src="canape/bleu2.jpeg" alt="Canapé 2 places - photo 2" />
+          <img src="canape/bleu3.jpeg" alt="Canapé 2 places - photo 3" />
+        </div>
+
+        <h2>Canapé convertible bleu</h2>
+        <p>Prix : 360€</p>
+        <p>Dimensions :</p>
+        <p class="vendor-info">Vendeur : <strong>Serge</strong></p>
+
+        <p class="contact-note">
+          💬 Message uniquement (WhatsApp / SMS) s'il vous plaît.
+        </p>
+
+        <div class="contact-buttons">
+          <a
+            href="https://wa.me/33689306437?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            target="_blank"
+            rel="noopener"
+            class="btn-wa"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="sms:+33689306437?body=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            class="btn-sms"
+          >
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUIT 4 -->
+      <div class="card">
+        <div class="gallery">
+          <img src="canape/gris1.jpeg" alt="Canape gris - photo 1" />
+          <img src="canape/gris2.jpeg" alt="Canape gris - photo 2" />
+          <img src="canape/gris3.jpeg" alt="Canape gris - photo 3" />
+        </div>
+
+        <h2>Canapé non-convertible gris</h2>
+        <p>Prix : 290€</p>
+        <p>Dimensions :</p>
+        <p class="vendor-info">Vendeur : <strong>Maksym</strong></p>
+
+        <p class="contact-note">
+          💬 Message uniquement (WhatsApp / SMS) s'il vous plaît.
+        </p>
+
+        <div class="contact-buttons">
+          <a
+            href="https://wa.me/33782655498?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            target="_blank"
+            rel="noopener"
+            class="btn-wa"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="sms:+33782655498?body=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20canap%C3%A9"
+            class="btn-sms"
+          >
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUIT 5 -->
+      <div class="card">
+        <div class="gallery">
+          <img src="canape/grisclair1.jpg" alt="Canapé gris clair - photo 1" />
+        </div>
+
+        <h2>Canapé non-convertible gris clair</h2>
+        <p>Prix : 290€</p>
+        <p>Dimensions :</p>
+        <p class="vendor-info">Vendeur : <strong>Serge</strong></p>
+
+        <p class="contact-note">
+          💬 Message uniquement (WhatsApp / SMS) s'il vous plaît.
+        </p>
+
+        <div class="contact-buttons">
+          <a
+            href="https://wa.me/33689306437?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20fauteuil"
+            target="_blank"
+            rel="noopener"
+            class="btn-wa"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="sms:+33689306437?body=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20fauteuil"
+            class="btn-sms"
+          >
+            SMS
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FENETRE CONTACT -->
+    <div class="contact-modal" id="contactModal">
+      <div class="contact-modal-content">
+        <button
+          class="contact-close"
+          id="closeContact"
+          type="button"
+          aria-label="Fermer"
+        >
+          ×
+        </button>
+
+        <h2>Contact</h2>
+
+        <p>
+          Vous êtes intéressé par un meuble ? Merci de nous contacter uniquement
+          par SMS ou WhatsApp. Nous vous répondrons dès que possible.
+        </p>
+
+        <!-- SERGE -->
+        <div class="contact-person">
+          <h3>Serge</h3>
+
+          <p>📞 +33 6 89 30 64 37</p>
+
+          <a href="sms:+33689306437" class="btn-sms"> Envoyer un SMS </a>
+
+          <a
+            href="https://wa.me/33689306437"
+            target="_blank"
+            rel="noopener"
+            class="btn-wa"
+          >
+            Écrire sur WhatsApp
+          </a>
+        </div>
+
+        <!-- MAKSYM -->
+        <div class="contact-person">
+          <h3>Maksym</h3>
+
+          <p>📞 +33 7 82 65 54 98</p>
+
+          <a href="sms:+33782655498" class="btn-sms"> Envoyer un SMS </a>
+
+          <a
+            href="https://wa.me/33782655498"
+            target="_blank"
+            rel="noopener"
+            class="btn-wa"
+          >
+            Écrire sur WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX PHOTOS -->
+    <div class="lightbox" id="lightbox">
+      <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Fermer"
+        type="button"
+      >
+        ×
+      </button>
+
+      <button
+        class="lightbox-arrow lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Photo précédente"
+        type="button"
+      >
+        ❮
+      </button>
+
+      <img id="lightboxImage" src="" alt="Photo agrandie" />
+
+      <button
+        class="lightbox-arrow lightbox-next"
+        id="lightboxNext"
+        aria-label="Photo suivante"
+        type="button"
+      >
+        ❯
+      </button>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      // RECHERCHE
+      const searchInput = document.getElementById("searchInput");
+      const cards = document.querySelectorAll(".card");
+
+      searchInput.addEventListener("input", function () {
+        const searchText = this.value.toLowerCase();
+
+        cards.forEach(function (card) {
+          card.style.display = card.innerText.toLowerCase().includes(searchText)
+            ? ""
+            : "none";
+        });
+      });
+
+      // FENETRE CONTACT
+      const openContact = document.getElementById("openContact");
+      const contactModal = document.getElementById("contactModal");
+      const closeContact = document.getElementById("closeContact");
+
+      openContact.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        contactModal.classList.add("open");
+        document.body.classList.add("modal-open");
+      });
+
+      closeContact.addEventListener("click", function () {
+        contactModal.classList.remove("open");
+        document.body.classList.remove("modal-open");
+      });
+
+      contactModal.addEventListener("click", function (event) {
+        if (event.target === contactModal) {
+          contactModal.classList.remove("open");
+          document.body.classList.remove("modal-open");
+        }
+      });
+
+      // GALERIES
+      let activeGallery = [];
+      let activeIndex = 0;
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+
+      function showGalleryImage(index) {
+        if (!activeGallery.length) return;
+
+        activeIndex = (index + activeGallery.length) % activeGallery.length;
+
+        lightboxImage.src = activeGallery[activeIndex].src;
+        lightboxImage.alt = activeGallery[activeIndex].alt;
+      }
+
+      function openLightbox(images, index) {
+        activeGallery = images;
+
+        showGalleryImage(index);
+
+        lightbox.classList.add("open");
+        document.body.classList.add("no-scroll");
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        document.body.classList.remove("no-scroll");
+      }
+
+      document.querySelectorAll(".gallery").forEach(function (gallery) {
+        const images = Array.from(gallery.querySelectorAll("img"));
+
+        if (!images.length) return;
+
+        let currentIndex = 0;
+
+        const prev = document.createElement("button");
+        prev.className = "gallery-arrow gallery-prev";
+        prev.type = "button";
+        prev.textContent = "❮";
+
+        const next = document.createElement("button");
+        next.className = "gallery-arrow gallery-next";
+        next.type = "button";
+        next.textContent = "❯";
+
+        const counter = document.createElement("span");
+        counter.className = "gallery-counter";
+
+        gallery.append(prev, next, counter);
+
+        function showImage(index) {
+          currentIndex = (index + images.length) % images.length;
+
+          images.forEach(function (img, i) {
+            img.classList.toggle("active", i === currentIndex);
+          });
+
+          prev.style.display = images.length > 1 ? "block" : "none";
+
+          next.style.display = images.length > 1 ? "block" : "none";
+
+          counter.style.display = images.length > 1 ? "block" : "none";
+
+          counter.textContent = currentIndex + 1 + " / " + images.length;
+        }
+
+        prev.addEventListener("click", function (event) {
+          event.stopPropagation();
+          showImage(currentIndex - 1);
+        });
+
+        next.addEventListener("click", function (event) {
+          event.stopPropagation();
+          showImage(currentIndex + 1);
+        });
+
+        images.forEach(function (img, i) {
+          img.addEventListener("click", function () {
+            openLightbox(images, i);
+          });
+        });
+
+        showImage(0);
+      });
+
+      // LIGHTBOX
+      document
+        .getElementById("lightboxClose")
+        .addEventListener("click", closeLightbox);
+
+      document
+        .getElementById("lightboxPrev")
+        .addEventListener("click", function () {
+          showGalleryImage(activeIndex - 1);
+        });
+
+      document
+        .getElementById("lightboxNext")
+        .addEventListener("click", function () {
+          showGalleryImage(activeIndex + 1);
+        });
+
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // CLAVIER
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          contactModal.classList.remove("open");
+          document.body.classList.remove("modal-open");
+
+          closeLightbox();
+        }
+
+        if (!lightbox.classList.contains("open")) return;
+
+        if (event.key === "ArrowLeft") {
+          showGalleryImage(activeIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+          showGalleryImage(activeIndex + 1);
+        }
+      });
+
+      // GLISSER AVEC LE DOIGT SUR MOBILE
+      let touchStartX = 0;
+
+      lightbox.addEventListener(
+        "touchstart",
+        function (event) {
+          touchStartX = event.changedTouches[0].screenX;
+        },
+        { passive: true }
+      );
+
+      lightbox.addEventListener(
+        "touchend",
+        function (event) {
+          const touchEndX = event.changedTouches[0].screenX;
+          const difference = touchEndX - touchStartX;
+
+          if (Math.abs(difference) > 50) {
+            showGalleryImage(activeIndex + (difference < 0 ? 1 : -1));
+          }
+        },
+        { passive: true }
+      );
+    </script>
+  </body>
+</html>

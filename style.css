@@ -1,0 +1,547 @@
+/* ОСНОВНЫЕ НАСТРОЙКИ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f3e9d7;
+  color: #4a463d;
+  font-family: "Merriweather", serif;
+}
+
+main {
+  flex: 1;
+}
+
+/* НАВИГАЦИЯ */
+
+nav {
+  width: 100%;
+  background: #5d744f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff8ea;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #e6d5bc;
+}
+
+/* HEADER */
+
+header {
+  width: 100%;
+  min-height: 190px;
+  padding: 40px 20px;
+  background-image: linear-gradient(
+      rgba(70, 90, 55, 0.18),
+      rgba(70, 90, 55, 0.18)
+    ),
+    url("background.jpeg");
+  background-size: cover;
+  background-position: center 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-content {
+  position: relative;
+}
+
+header h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  color: #fff8e8;
+  -webkit-text-stroke: 1px #26351f;
+  text-shadow: 2px 2px 0 #26351f, 0 3px 8px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 23px;
+  line-height: 1.5;
+  color: #4b6042;
+  text-shadow: 1px 1px 0 #fff8e8, -1px -1px 0 #fff8e8, 1px -1px 0 #fff8e8,
+    -1px 1px 0 #fff8e8;
+  font-weight: 700;
+}
+
+/* ПОИСК */
+
+.search {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.search input {
+  width: 300px;
+  max-width: 90%;
+  padding: 13px 18px;
+  border-radius: 25px;
+  border: 1px solid #bda889;
+  background: #fff9ef;
+  color: #4a463d;
+  outline: none;
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+}
+
+.search input:focus {
+  border-color: #789568;
+  box-shadow: 0 0 8px rgba(120, 149, 104, 0.35);
+}
+
+/* КАТАЛОГ */
+
+#catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+/* КАРТОЧКИ */
+
+.card {
+  background: #fff9ef;
+  border-radius: 15px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(120, 90, 50, 0.18);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(90, 75, 50, 0.25);
+}
+
+.card h2 {
+  margin: 15px;
+  color: #4b6042;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.card p {
+  padding: 0 15px;
+  color: #7d776d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ГАЛЕРЕЯ */
+
+.gallery {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+  background: #e8dfd0;
+}
+
+.gallery img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.gallery img.active {
+  display: block;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(50, 50, 50, 0.65);
+  color: white;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.gallery-arrow:hover {
+  background: #5d744f;
+  transform: translateY(-50%);
+}
+
+.gallery-prev {
+  left: 10px;
+}
+
+.gallery-next {
+  right: 10px;
+}
+
+.gallery-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+/* УВЕЛИЧЕННОЕ ФОТО */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.92);
+  justify-content: center;
+  align-items: center;
+  padding: 55px 60px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  color: white;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.lightbox-close {
+  top: 15px;
+  right: 20px;
+  font-size: 35px;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 0;
+}
+
+.lightbox-prev {
+  left: 15px;
+}
+
+.lightbox-next {
+  right: 15px;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  background: #5d744f;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* ПРОДАВЦЫ */
+
+.vendors-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+.vendor-card {
+  background: #fff9ef;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(120, 90, 50, 0.18);
+  transition: 0.3s;
+}
+
+.vendor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(90, 75, 50, 0.25);
+}
+
+.vendor-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.vendor-card h2 {
+  color: #4b6042;
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.vendor-status {
+  color: #789568;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.vendor-info {
+  color: #4a463d;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.vendor-button {
+  display: inline-block;
+  background: #789568;
+  color: #fff9ef;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.vendor-button:hover {
+  background: #5d744f;
+}
+
+/* КОНТАКТНЫЕ КНОПКИ */
+
+.contact-note {
+  font-size: 12px !important;
+  color: #666 !important;
+  font-style: italic;
+  margin: 6px 0;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 15px 0;
+}
+
+.btn-wa,
+.btn-sms {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.btn-wa {
+  background: #5a8367;
+}
+
+.btn-wa:hover {
+  background: #4a6e55;
+}
+
+.btn-sms {
+  background: #8c6d58;
+}
+
+.btn-sms:hover {
+  background: #755946;
+}
+
+/* ЮРИДИЧЕСКАЯ СТРАНИЦА */
+
+.legal-page {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 55px 25px;
+  text-align: center;
+}
+
+.legal-page h2 {
+  color: #4b6042;
+  font-size: 20px;
+  margin: 30px 0 15px;
+}
+
+.legal-page p {
+  color: #4a463d;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+@media (max-width: 700px) {
+  nav {
+    gap: 15px;
+    padding: 14px 10px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  header {
+    min-height: 200px;
+    padding: 35px 20px;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  header p {
+    font-size: 19px;
+  }
+
+  .search {
+    margin: 25px 0;
+  }
+
+  #catalog {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .gallery {
+    height: 220px;
+  }
+
+  .card h2 {
+    font-size: 19px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .vendors-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    margin: 25px auto;
+    gap: 20px;
+  }
+
+  .vendor-card {
+    padding: 25px 20px;
+  }
+
+  .vendor-card h2 {
+    font-size: 21px;
+  }
+
+  .legal-page {
+    padding: 40px 20px;
+  }
+
+  .legal-page p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .lightbox {
+    padding: 50px 45px;
+  }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  .lightbox-prev {
+    left: 5px;
+  }
+
+  .lightbox-next {
+    right: 5px;
+  }
+}
+
+// ПОКУПКА ТОВАРА
+
+const buyButtons = document.querySelectorAll(".buy-button");
+
+buyButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    let email = prompt("Veuillez entrer votre adresse électronique :");
+
+    if (email && email.includes("@")) {
+      alert("Merci ! Nous vous contacterons dans les plus brefs délais.");
+    } else {
+      alert("Veuillez entrer une adresse électronique valide.");
+    }
+  });
+});
+
+// ПОИСК ТОВАРОВ
+
+const search = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+if (search) {
+  search.addEventListener("input", function () {
+    let text = this.value.toLowerCase();
+
+    cards.forEach((card) => {
+      let name = card.querySelector("h2").textContent.toLowerCase();
+
+      card.style.display = name.includes(text) ? "" : "none";
+    });
+  });
+}
