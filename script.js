@@ -83,6 +83,14 @@ document.querySelectorAll(".gallery").forEach(function (gallery) {
 
   gallery.append(prev, next, counter);
 
+  // ИСПРАВЛЕНИЕ: ПОЛОЖЕНИЕ СТРЕЛОК
+
+  prev.style.setProperty("left", "10px", "important");
+  prev.style.setProperty("right", "auto", "important");
+
+  next.style.setProperty("right", "10px", "important");
+  next.style.setProperty("left", "auto", "important");
+
   function showImage(index) {
     currentIndex = (index + images.length) % images.length;
 
