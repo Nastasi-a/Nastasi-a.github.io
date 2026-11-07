@@ -195,16 +195,7 @@ header p {
   z-index: 2;
 }
 
-```css
 /* ПРОДАННЫЙ ТОВАР */
-
-.card.sold .gallery {
-  position: relative;
-}
-
-.card.sold .gallery img {
-  filter: brightness(75%);
-}
 
 .card.sold .gallery::after {
   content: "VENDU";
@@ -212,12 +203,13 @@ header p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #ffffff;
-  font-size: 80px;
-  font-weight: 900;
-  letter-spacing: 7px;
-  text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.9);
-  z-index: 20;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 10;
   pointer-events: none;
   white-space: nowrap;
 }
