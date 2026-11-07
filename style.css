@@ -217,6 +217,22 @@ header p {
   margin: 0 !important;
 }
 
+/* СЧЁТЧИК ФОТОГРАФИЙ */
+
+.gallery-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(50, 50, 50, 0.7);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  z-index: 20;
+  pointer-events: none;
+}
+
 /* СТАТУСЫ ТОВАРОВ */
 
 /* Затемнение фотографий */
@@ -572,5 +588,28 @@ header p {
 
   .lightbox-next {
     right: 5px;
+  }
+}
+/* ИСПРАВЛЕНИЕ СТРЕЛОК НА ТЕЛЕФОНАХ */
+
+@media (max-width: 700px) {
+  .gallery {
+    position: relative !important;
+  }
+
+  .gallery-arrow.gallery-prev {
+    position: absolute !important;
+    left: 10px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .gallery-arrow.gallery-next {
+    position: absolute !important;
+    right: 10px !important;
+    left: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
 }
