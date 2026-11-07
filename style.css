@@ -181,6 +181,8 @@ header p {
   display: block;
 }
 
+/* СТРЕЛКИ ГАЛЕРЕИ */
+
 .gallery-arrow {
   position: absolute;
   top: 50%;
@@ -189,20 +191,38 @@ header p {
   height: 36px;
   padding: 0;
   border-radius: 50%;
+  border: none;
   background: rgba(50, 50, 50, 0.65);
   color: white;
   font-size: 16px;
-  z-index: 2;
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* Левая стрелка */
+
+.gallery-arrow.prev {
+  left: 10px;
+  right: auto;
+}
+
+/* Правая стрелка */
+
+.gallery-arrow.next {
+  right: 10px;
+  left: auto;
 }
 
 /* ПРОДАННЫЙ ТОВАР */
 
-/* Затемнение фото на всех устройствах */
+/* Затемнение фотографии */
+
 .card.sold .gallery img {
   filter: brightness(75%) !important;
 }
 
 /* Надпись VENDU */
+
 .card.sold .gallery::after {
   content: "VENDU";
   position: absolute;
@@ -220,17 +240,6 @@ header p {
   white-space: nowrap;
 }
 
-/* Настройки для телефона */
-@media (max-width: 600px) {
-  .card.sold .gallery img {
-    filter: brightness(75%) !important;
-  }
-
-  .card.sold .gallery::after {
-    font-size: 20px !important;
-    letter-spacing: 2px;
-  }
-}
 /* УВЕЛИЧЕННОЕ ФОТО */
 
 .lightbox {
@@ -481,6 +490,25 @@ header p {
 
   .card p {
     font-size: 13px;
+  }
+
+  /* Стрелки галереи на телефоне */
+
+  .gallery-arrow.prev {
+    left: 10px;
+    right: auto;
+  }
+
+  .gallery-arrow.next {
+    right: 10px;
+    left: auto;
+  }
+
+  /* Надпись VENDU на телефоне */
+
+  .card.sold .gallery::after {
+    font-size: 20px !important;
+    letter-spacing: 2px;
   }
 
   .vendors-container {
