@@ -1,3 +1,4 @@
+```css
 /* ОСНОВНЫЕ НАСТРОЙКИ */
 
 * {
@@ -201,7 +202,7 @@ header p {
 
 /* ЛЕВАЯ СТРЕЛКА */
 
-.gallery-arrow.gallery-prev {
+.gallery-arrow\.gallery-prev {
   inset: 50% auto auto 10px !important;
   margin: 0 !important;
   transform: translateY(-50%) !important;
@@ -209,41 +210,25 @@ header p {
 
 /* ПРАВАЯ СТРЕЛКА */
 
-.gallery-arrow.gallery-next {
+.gallery-arrow\.gallery-next {
   inset: 50% 10px auto auto !important;
   margin: 0 !important;
   transform: translateY(-50%) !important;
 }
 
-/* STATUTS DES PRODUITS */
+/* СТАТУСЫ ТОВАРОВ */
 
 /* Затемнение фотографий проданных и зарезервированных товаров */
+
 .card.sold .gallery img,
 .card.reserved .gallery img {
   filter: brightness(75%) !important;
 }
 
-/* ПРОДАННЫЙ ТОВАР — VENDU */
-.card.sold .gallery::after {
-  content: "VENDU";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  z-index: 10;
-  pointer-events: none;
-  white-space: nowrap;
-}
+/* ОБЩИЙ СТИЛЬ НАДПИСЕЙ VENDU И RÉSERVÉ */
 
-/* ЗАРЕЗЕРВИРОВАННЫЙ ТОВАР — RÉSERVÉ */
+.card.sold .gallery::after,
 .card.reserved .gallery::after {
-  content: "RÉSERVÉ";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -260,6 +245,18 @@ header p {
   z-index: 10;
   pointer-events: none;
   white-space: nowrap;
+}
+
+/* ПРОДАННЫЙ ТОВАР */
+
+.card.sold .gallery::after {
+  content: "VENDU";
+}
+
+/* ЗАРЕЗЕРВИРОВАННЫЙ ТОВАР */
+
+.card.reserved .gallery::after {
+  content: "RÉSERVÉ";
 }
 
 /* УВЕЛИЧЕННОЕ ФОТО */
@@ -514,63 +511,9 @@ header p {
     font-size: 13px;
   }
 
-  /* МОБИЛЬНАЯ ВЕРСИЯ */
+  /* VENDU И RÉSERVÉ НА ТЕЛЕФОНЕ */
 
-@media (max-width: 700px) {
-
-  nav {
-    gap: 15px;
-    padding: 14px 10px;
-  }
-
-  nav a {
-    font-size: 13px;
-  }
-
-  header {
-    min-height: 200px;
-    padding: 35px 20px;
-  }
-
-  header h1 {
-    font-size: 30px;
-  }
-
-  header p {
-    font-size: 19px;
-  }
-
-  .search {
-    margin: 25px 0;
-  }
-
-  #catalog {
-    grid-template-columns: 1fr;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .gallery {
-    height: 220px;
-  }
-
-  .card h2 {
-    font-size: 19px;
-  }
-
-  .card p {
-    font-size: 13px;
-  }
-
-  /* Надпись VENDU на телефоне */
-
-  .card.sold .gallery::after {
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
-
-  /* Надпись RÉSERVÉ на телефоне */
-
+  .card.sold .gallery::after,
   .card.reserved .gallery::after {
     font-size: 20px;
     letter-spacing: 2px;
