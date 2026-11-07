@@ -199,13 +199,15 @@ header p {
   cursor: pointer;
 }
 
-/* Левая стрелка */
+/* ЛЕВАЯ СТРЕЛКА */
+
 .gallery-arrow.gallery-prev {
   left: 10px !important;
   right: auto !important;
 }
 
-/* Правая стрелка */
+/* ПРАВАЯ СТРЕЛКА */
+
 .gallery-arrow.gallery-next {
   right: 10px !important;
   left: auto !important;
@@ -229,7 +231,7 @@ header p {
   transform: translate(-50%, -50%);
   color: white;
   font-family: Arial, sans-serif;
-  font-size: 24px !important;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: 2px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -492,20 +494,20 @@ header p {
 
   /* Стрелки галереи на телефоне */
 
-  .gallery-arrow.prev {
-    left: 10px;
-    right: auto;
+  .gallery-arrow.gallery-prev {
+    left: 10px !important;
+    right: auto !important;
   }
 
-  .gallery-arrow.next {
-    right: 10px;
-    left: auto;
+  .gallery-arrow.gallery-next {
+    right: 10px !important;
+    left: auto !important;
   }
 
   /* Надпись VENDU на телефоне */
 
   .card.sold .gallery::after {
-    font-size: 20px !important;
+    font-size: 20px;
     letter-spacing: 2px;
   }
 
