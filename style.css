@@ -242,6 +242,27 @@ header p {
   white-space: nowrap;
 }
 
+/* PRODUIT RÉSERVÉ */
+.card.reserved .gallery img {
+  filter: brightness(75%);
+}
+
+.card.reserved .gallery::after {
+  content: "RÉSERVÉ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(50, 50, 50, 0.65);
+  padding: 10px 25px;
+  border-radius: 5px;
+  z-index: 4;
+  pointer-events: none;
+}
+
 /* УВЕЛИЧЕННОЕ ФОТО */
 
 .lightbox {
