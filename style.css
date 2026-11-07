@@ -561,3 +561,23 @@ header p {
     right: 5px;
   }
 }
+
+/* ИСПРАВЛЕНИЕ ПОЛОЖЕНИЯ СТРЕЛОК ГАЛЕРЕИ */
+
+.gallery {
+  position: relative;
+}
+
+.gallery-arrow.gallery-prev {
+  left: 10px !important;
+  right: auto !important;
+  inset: 50% auto auto 10px !important;
+  transform: translateY(-50%) !important;
+}
+
+.gallery-arrow.gallery-next {
+  right: 10px !important;
+  left: auto !important;
+  inset: 50% 10px auto auto !important;
+  transform: translateY(-50%) !important;
+}
