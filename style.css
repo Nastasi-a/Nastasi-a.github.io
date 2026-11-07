@@ -1,4 +1,3 @@
-```css
 /* ОСНОВНЫЕ НАСТРОЙКИ */
 
 * {
@@ -89,8 +88,8 @@ header p {
   font-size: 23px;
   line-height: 1.5;
   color: #4b6042;
-  text-shadow: 1px 1px 0 #fff8e8, -1px -1px 0 #fff8e8,
-    1px -1px 0 #fff8e8, -1px 1px 0 #fff8e8;
+  text-shadow: 1px 1px 0 #fff8e8, -1px -1px 0 #fff8e8, 1px -1px 0 #fff8e8,
+    -1px 1px 0 #fff8e8;
   font-weight: 700;
 }
 
@@ -469,7 +468,6 @@ header p {
 /* МОБИЛЬНАЯ ВЕРСИЯ */
 
 @media (max-width: 700px) {
-
   nav {
     gap: 15px;
     padding: 14px 10px;
@@ -575,6 +573,4 @@ header p {
   .lightbox-next {
     right: 5px;
   }
-
 }
-```
