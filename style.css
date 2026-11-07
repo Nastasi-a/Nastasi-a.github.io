@@ -89,8 +89,8 @@ header p {
   font-size: 23px;
   line-height: 1.5;
   color: #4b6042;
-  text-shadow: 1px 1px 0 #fff8e8, -1px -1px 0 #fff8e8, 1px -1px 0 #fff8e8,
-    -1px 1px 0 #fff8e8;
+  text-shadow: 1px 1px 0 #fff8e8, -1px -1px 0 #fff8e8,
+    1px -1px 0 #fff8e8, -1px 1px 0 #fff8e8;
   font-weight: 700;
 }
 
@@ -202,30 +202,32 @@ header p {
 
 /* ЛЕВАЯ СТРЕЛКА */
 
-.gallery-arrow\.gallery-prev {
-  inset: 50% auto auto 10px !important;
-  margin: 0 !important;
+.gallery-arrow.gallery-prev {
+  left: 10px !important;
+  right: auto !important;
   transform: translateY(-50%) !important;
+  margin: 0 !important;
 }
 
 /* ПРАВАЯ СТРЕЛКА */
 
-.gallery-arrow\.gallery-next {
-  inset: 50% 10px auto auto !important;
-  margin: 0 !important;
+.gallery-arrow.gallery-next {
+  right: 10px !important;
+  left: auto !important;
   transform: translateY(-50%) !important;
+  margin: 0 !important;
 }
 
 /* СТАТУСЫ ТОВАРОВ */
 
-/* Затемнение фотографий проданных и зарезервированных товаров */
+/* Затемнение фотографий */
 
 .card.sold .gallery img,
 .card.reserved .gallery img {
   filter: brightness(75%) !important;
 }
 
-/* ОБЩИЙ СТИЛЬ НАДПИСЕЙ VENDU И RÉSERVÉ */
+/* ОБЩИЙ СТИЛЬ VENDU И RÉSERVÉ */
 
 .card.sold .gallery::after,
 .card.reserved .gallery::after {
@@ -467,6 +469,7 @@ header p {
 /* МОБИЛЬНАЯ ВЕРСИЯ */
 
 @media (max-width: 700px) {
+
   nav {
     gap: 15px;
     padding: 14px 10px;
@@ -511,13 +514,25 @@ header p {
     font-size: 13px;
   }
 
-  /* VENDU И RÉSERVÉ НА ТЕЛЕФОНЕ */
+  /* ОДИНАКОВЫЙ СТИЛЬ СТАТУСОВ НА ТЕЛЕФОНЕ */
 
   .card.sold .gallery::after,
   .card.reserved .gallery::after {
     font-size: 20px;
     letter-spacing: 2px;
     padding: 8px 18px;
+  }
+
+  /* СТРЕЛКИ НА ТЕЛЕФОНЕ */
+
+  .gallery-arrow.gallery-prev {
+    left: 10px !important;
+    right: auto !important;
+  }
+
+  .gallery-arrow.gallery-next {
+    right: 10px !important;
+    left: auto !important;
   }
 
   .vendors-container {
@@ -560,24 +575,6 @@ header p {
   .lightbox-next {
     right: 5px;
   }
-}
 
-/* ИСПРАВЛЕНИЕ ПОЛОЖЕНИЯ СТРЕЛОК ГАЛЕРЕИ */
-
-.gallery {
-  position: relative;
 }
-
-.gallery-arrow.gallery-prev {
-  left: 10px !important;
-  right: auto !important;
-  inset: 50% auto auto 10px !important;
-  transform: translateY(-50%) !important;
-}
-
-.gallery-arrow.gallery-next {
-  right: 10px !important;
-  left: auto !important;
-  inset: 50% 10px auto auto !important;
-  transform: translateY(-50%) !important;
-}
+```
