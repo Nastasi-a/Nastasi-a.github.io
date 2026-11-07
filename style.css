@@ -184,33 +184,35 @@ header p {
 /* СТРЕЛКИ ГАЛЕРЕИ */
 
 .gallery-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
   width: 36px;
   height: 36px;
   padding: 0;
   border-radius: 50%;
   border: none;
-  background: rgba(50, 50, 50, 0.65);
+  background: rgba(50, 50, 50, 0.75);
   color: white;
   font-size: 16px;
-  z-index: 5;
+  z-index: 20;
   cursor: pointer;
 }
 
 /* ЛЕВАЯ СТРЕЛКА */
 
 .gallery-arrow.gallery-prev {
-  left: 10px !important;
-  right: auto !important;
+  inset: 50% auto auto 10px !important;
+  margin: 0 !important;
+  transform: translateY(-50%) !important;
 }
 
 /* ПРАВАЯ СТРЕЛКА */
 
 .gallery-arrow.gallery-next {
-  right: 10px !important;
-  left: auto !important;
+  inset: 50% 10px auto auto !important;
+  margin: 0 !important;
+  transform: translateY(-50%) !important;
 }
 
 /* ПРОДАННЫЙ ТОВАР */
@@ -490,18 +492,6 @@ header p {
 
   .card p {
     font-size: 13px;
-  }
-
-  /* Стрелки галереи на телефоне */
-
-  .gallery-arrow.gallery-prev {
-    left: 10px !important;
-    right: auto !important;
-  }
-
-  .gallery-arrow.gallery-next {
-    right: 10px !important;
-    left: auto !important;
   }
 
   /* Надпись VENDU на телефоне */

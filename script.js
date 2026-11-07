@@ -61,6 +61,8 @@ function closeLightbox() {
   document.body.classList.remove("no-scroll");
 }
 
+// СОЗДАНИЕ ГАЛЕРЕЙ
+
 document.querySelectorAll(".gallery").forEach(function (gallery) {
   const images = Array.from(gallery.querySelectorAll("img"));
 
@@ -83,13 +85,7 @@ document.querySelectorAll(".gallery").forEach(function (gallery) {
 
   gallery.append(prev, next, counter);
 
-  // ИСПРАВЛЕНИЕ: ПОЛОЖЕНИЕ СТРЕЛОК
-
-  prev.style.setProperty("left", "10px", "important");
-  prev.style.setProperty("right", "auto", "important");
-
-  next.style.setProperty("right", "10px", "important");
-  next.style.setProperty("left", "auto", "important");
+  // ПОКАЗ ФОТОГРАФИИ
 
   function showImage(index) {
     currentIndex = (index + images.length) % images.length;
@@ -105,15 +101,21 @@ document.querySelectorAll(".gallery").forEach(function (gallery) {
     counter.textContent = currentIndex + 1 + " / " + images.length;
   }
 
+  // ПЕРЕЛИСТЫВАНИЕ НАЗАД
+
   prev.addEventListener("click", function (event) {
     event.stopPropagation();
     showImage(currentIndex - 1);
   });
 
+  // ПЕРЕЛИСТЫВАНИЕ ВПЕРЁД
+
   next.addEventListener("click", function (event) {
     event.stopPropagation();
     showImage(currentIndex + 1);
   });
+
+  // ОТКРЫТИЕ УВЕЛИЧЕННОГО ФОТО
 
   images.forEach(function (img, i) {
     img.addEventListener("click", function () {
@@ -143,6 +145,8 @@ lightbox.addEventListener("click", function (event) {
     closeLightbox();
   }
 });
+
+// УПРАВЛЕНИЕ КЛАВИАТУРОЙ
 
 document.addEventListener("keydown", function (event) {
   if (!lightbox.classList.contains("open")) return;
