@@ -159,21 +159,6 @@ header p {
   line-height: 1.5;
 }
 
-.card.sold .gallery::after {
-  content: "VENDU";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 80px;
-  font-weight: 900;
-  letter-spacing: 7px;
-  text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.9);
-  z-index: 10;
-  pointer-events: none;
-  white-space: nowrap;
-}
 /* ГАЛЕРЕЯ */
 
 .gallery {
@@ -208,6 +193,28 @@ header p {
   color: white;
   font-size: 16px;
   z-index: 2;
+}
+
+/* ПРОДАННЫЙ ТОВАР */
+
+.card.sold .gallery img {
+  filter: brightness(75%);
+}
+
+.card.sold .gallery::after {
+  content: "VENDU";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 7px;
+  text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .gallery-arrow:hover {
