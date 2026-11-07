@@ -534,36 +534,3 @@ header p {
     right: 5px;
   }
 }
-
-// ПОКУПКА ТОВАРА
-
-const buyButtons = document.querySelectorAll(".buy-button");
-
-buyButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    let email = prompt("Veuillez entrer votre adresse électronique :");
-
-    if (email && email.includes("@")) {
-      alert("Merci ! Nous vous contacterons dans les plus brefs délais.");
-    } else {
-      alert("Veuillez entrer une adresse électronique valide.");
-    }
-  });
-});
-
-// ПОИСК ТОВАРОВ
-
-const search = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
-
-if (search) {
-  search.addEventListener("input", function () {
-    let text = this.value.toLowerCase();
-
-    cards.forEach((card) => {
-      let name = card.querySelector("h2").textContent.toLowerCase();
-
-      card.style.display = name.includes(text) ? "" : "none";
-    });
-  });
-}
