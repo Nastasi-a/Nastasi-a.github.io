@@ -200,17 +200,15 @@ header p {
 }
 
 /* Левая стрелка */
-
-.gallery-arrow.prev {
-  left: 10px;
-  right: auto;
+.gallery-arrow.gallery-prev {
+  left: 10px !important;
+  right: auto !important;
 }
 
 /* Правая стрелка */
-
-.gallery-arrow.next {
-  right: 10px;
-  left: auto;
+.gallery-arrow.gallery-next {
+  right: 10px !important;
+  left: auto !important;
 }
 
 /* ПРОДАННЫЙ ТОВАР */
