@@ -195,7 +195,12 @@ header p {
   z-index: 2;
 }
 
+```css
 /* ПРОДАННЫЙ ТОВАР */
+
+.card.sold .gallery {
+  position: relative;
+}
 
 .card.sold .gallery img {
   filter: brightness(75%);
@@ -207,38 +212,14 @@ header p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #ffffff;
   font-size: 80px;
   font-weight: 900;
   letter-spacing: 7px;
   text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.9);
-  z-index: 10;
+  z-index: 20;
   pointer-events: none;
   white-space: nowrap;
-}
-
-.gallery-arrow:hover {
-  background: #5d744f;
-  transform: translateY(-50%);
-}
-
-.gallery-prev {
-  left: 10px;
-}
-
-.gallery-next {
-  right: 10px;
-}
-
-.gallery-counter {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.65);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 12px;
 }
 
 /* УВЕЛИЧЕННОЕ ФОТО */
