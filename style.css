@@ -197,6 +197,12 @@ header p {
 
 /* ПРОДАННЫЙ ТОВАР */
 
+/* Затемнение фото на всех устройствах */
+.card.sold .gallery img {
+  filter: brightness(75%) !important;
+}
+
+/* Надпись VENDU */
 .card.sold .gallery::after {
   content: "VENDU";
   position: absolute;
@@ -207,13 +213,24 @@ header p {
   font-family: Arial, sans-serif;
   font-size: 24px !important;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   z-index: 10;
   pointer-events: none;
   white-space: nowrap;
 }
 
+/* Настройки для телефона */
+@media (max-width: 600px) {
+  .card.sold .gallery img {
+    filter: brightness(75%) !important;
+  }
+
+  .card.sold .gallery::after {
+    font-size: 20px !important;
+    letter-spacing: 2px;
+  }
+}
 /* УВЕЛИЧЕННОЕ ФОТО */
 
 .lightbox {
